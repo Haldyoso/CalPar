@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">CalPar</string>
+    <string name="white_noise">White noise</string>
+    <string name="pink_noise">Pink noise</string>
+    <string name="brown_noise">Brown noise</string>
+    <string name="stop">Stop</string>
+
+
 </resources>
