@@ -3,7 +3,8 @@
     <string name="white_noise">White noise</string>
     <string name="pink_noise">Pink noise</string>
     <string name="brown_noise">Brown noise</string>
-    <string name="stop">Stop</string>
+    <string name="heart_beat">Heart beat</string>
+    <string name="stop">STOP</string>
 
 
 </resources>
