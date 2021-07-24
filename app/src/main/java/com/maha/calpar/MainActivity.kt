@@ -1,16 +1,17 @@
 package com.maha.calpar
 
+import android.content.Context
 import android.media.AudioAttributes
 import android.media.AudioManager
-import android.media.MediaPlayer
 import android.media.SoundPool
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
+import com.google.android.material.snackbar.Snackbar.LENGTH_SHORT
+import com.google.android.material.snackbar.Snackbar.make
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     private var sound3 = 0
     private var sound4 = 0
     private var sound3StreamId = 0
+    lateinit var it: View
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,38 +53,43 @@ class MainActivity : AppCompatActivity() {
     fun playSound(v: View) {
         when (v.id) {
             R.id.btnWhiteNoise -> {
-                sound3StreamId = soundPool!!.play(sound1, 1f, 1f, 0, 0, 1f)
-                soundPool!!.pause(sound3StreamId)
+                sound3StreamId = soundPool!!.play(sound1, 1f, 1f, 0, -1, 1f)
                 Toast.makeText(this, "playing: White noise", Toast.LENGTH_SHORT).show()
-
             }
 
             R.id.btnPinkNoise -> {
-                sound3StreamId = soundPool!!.play(sound2, 1f, 1f, 0, 0, 1f)
-                soundPool!!.pause(sound3StreamId)
+                sound3StreamId = soundPool!!.play(sound2, 1f, 1f, 0, -1, 1f)
                 Toast.makeText(this, "playing: Pink noise", Toast.LENGTH_SHORT).show()
             }
 
             R.id.btnHeartBeat -> {
-                sound3StreamId = soundPool!!.play(sound3, 1f, 1f, 0, 0, 1f)
-                soundPool!!.pause(sound3StreamId)
+                sound3StreamId = soundPool!!.play(sound3, 1f, 1f, 0, -1, 1f)
                 Toast.makeText(this, "playing: Heart beat", Toast.LENGTH_SHORT).show()
             }
+
             R.id.btnBrownNoise -> {
-                sound3StreamId = soundPool!!.play(sound4, 1f, 1f, 0, 0, 1f)
-                soundPool!!.pause(sound3StreamId)
+                sound3StreamId = soundPool!!.play(sound4, 1f, 1f, 0, -1, 1f)
                 Toast.makeText(this, "playing: Brown noise", Toast.LENGTH_SHORT).show()
+            }
+
+            R.id.btnToastTest -> {
+
+                Toast.makeText(this, "playing: toast test", Toast.LENGTH_SHORT).show()
+            }
+
+            R.id.btnSnackBar -> {
+                val snackbar = make(it, "Snackbar test", LENGTH_SHORT)
+                snackbar.show()
             }
         }
     }
 
+
     fun stopSounds(v: View) {
 
 
-        soundPool!!.stop(sound3StreamId)
+        soundPool?.stop(sound3StreamId)
     }
-
-
 
 
 }

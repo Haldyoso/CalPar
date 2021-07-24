@@ -5,6 +5,8 @@
     <string name="brown_noise">Brown noise</string>
     <string name="heart_beat">Heart beat</string>
     <string name="stop">STOP</string>
+    <string name="snackbar_test">Snackbar Test</string>
+    <string name="toasttest">toastTest</string>
 
 
 </resources>
