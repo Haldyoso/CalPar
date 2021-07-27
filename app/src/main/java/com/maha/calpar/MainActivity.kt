@@ -77,10 +77,10 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "playing: toast test", Toast.LENGTH_SHORT).show()
             }
 
-            R.id.btnSnackBar -> {
-                val snackbar = make(it, "Snackbar test", LENGTH_SHORT)
-                snackbar.show()
-            }
+//            R.id.btnSnackBar -> {
+//                val snackbar = make(ConstraintLayout(this), "Snackbar test", LENGTH_SHORT)
+//                snackbar.show()
+//            }
         }
     }
 
@@ -89,6 +89,21 @@ class MainActivity : AppCompatActivity() {
 
 
         soundPool?.stop(sound3StreamId)
+    }
+
+    fun loadTest(v: View) {
+
+
+        Toast.makeText(this, "playing: toast test", Toast.LENGTH_SHORT).show()
+    }
+
+
+    fun loadSnack(v: View) {
+
+        val snackbar = make(v, "Snackbar test", LENGTH_SHORT)
+        //snackbar.anchorView = v
+
+                snackbar.show()
     }
 
 

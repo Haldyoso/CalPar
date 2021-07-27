@@ -6,7 +6,7 @@
     <string name="heart_beat">Heart beat</string>
     <string name="stop">STOP</string>
     <string name="snackbar_test">Snackbar Test</string>
-    <string name="toasttest">toastTest</string>
+    <string name="toasttest">Toast test</string>
 
 
 </resources>
