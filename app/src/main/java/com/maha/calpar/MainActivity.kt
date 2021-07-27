@@ -1,17 +1,18 @@
 package com.maha.calpar
 
-import android.content.Context
 import android.media.AudioAttributes
 import android.media.AudioManager
 import android.media.SoundPool
 import android.os.Build
 import android.os.Bundle
+import android.view.Gravity
 import android.view.View
+import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
 import com.google.android.material.snackbar.Snackbar.LENGTH_SHORT
 import com.google.android.material.snackbar.Snackbar.make
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -102,6 +103,11 @@ class MainActivity : AppCompatActivity() {
 
         val snackbar = make(v, "Snackbar test", LENGTH_SHORT)
         //snackbar.anchorView = v
+
+        val view: View = snackbar.view
+        val params = view.layoutParams as FrameLayout.LayoutParams
+        params.gravity = Gravity.TOP
+        view.layoutParams = params
 
                 snackbar.show()
     }
