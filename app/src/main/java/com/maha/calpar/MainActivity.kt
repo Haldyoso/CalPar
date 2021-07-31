@@ -10,8 +10,8 @@ import android.view.View
 import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.snackbar.Snackbar.LENGTH_SHORT
 import com.google.android.material.snackbar.Snackbar.make
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -23,7 +23,8 @@ class MainActivity : AppCompatActivity() {
     private var sound3 = 0
     private var sound4 = 0
     private var sound3StreamId = 0
-    lateinit var it: View
+    lateinit var snackText:String
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,22 +56,22 @@ class MainActivity : AppCompatActivity() {
         when (v.id) {
             R.id.btnWhiteNoise -> {
                 sound3StreamId = soundPool!!.play(sound1, 1f, 1f, 0, -1, 1f)
-                Toast.makeText(this, "playing: White noise", Toast.LENGTH_SHORT).show()
+                loadSnack(v)
             }
 
             R.id.btnPinkNoise -> {
                 sound3StreamId = soundPool!!.play(sound2, 1f, 1f, 0, -1, 1f)
-                Toast.makeText(this, "playing: Pink noise", Toast.LENGTH_SHORT).show()
+                loadSnack(v)
             }
 
             R.id.btnHeartBeat -> {
                 sound3StreamId = soundPool!!.play(sound3, 1f, 1f, 0, -1, 1f)
-                Toast.makeText(this, "playing: Heart beat", Toast.LENGTH_SHORT).show()
+                loadSnack(v)
             }
 
             R.id.btnBrownNoise -> {
                 sound3StreamId = soundPool!!.play(sound4, 1f, 1f, 0, -1, 1f)
-                Toast.makeText(this, "playing: Brown noise", Toast.LENGTH_SHORT).show()
+                loadSnack(v)
             }
 
             R.id.btnToastTest -> {
@@ -78,10 +79,6 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "playing: toast test", Toast.LENGTH_SHORT).show()
             }
 
-//            R.id.btnSnackBar -> {
-//                val snackbar = make(ConstraintLayout(this), "Snackbar test", LENGTH_SHORT)
-//                snackbar.show()
-//            }
         }
     }
 
@@ -101,7 +98,9 @@ class MainActivity : AppCompatActivity() {
 
     fun loadSnack(v: View) {
 
-        val snackbar = make(v, "Snackbar test", LENGTH_SHORT)
+        var snackText = "NEED TO FIGURE IT OUT, HOW TO CHANGE ACCORDING TO CLICKED BUTTON"
+
+        val snackbar = make(v, snackText, 1500)
         //snackbar.anchorView = v
 
         val view: View = snackbar.view
@@ -109,8 +108,16 @@ class MainActivity : AppCompatActivity() {
         params.gravity = Gravity.TOP
         view.layoutParams = params
 
+
                 snackbar.show()
     }
+
+    
+
+
+
+
+
 
 
 }
