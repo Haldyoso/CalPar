@@ -6,10 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/toggleButtonGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:singleSelection="true"
         android:layout_gravity="center_horizontal"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -19,39 +20,59 @@
             android:id="@+id/btnWhiteNoise"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:onClick="playSound"
-            android:text="@string/white_noise" />
+            android:layout_weight="02"
+
+            android:backgroundTint="@color/button_background_color"
+            android:text="@string/white_noise"
+
+            android:textColor="@color/black"
+            app:cornerRadius="20dp"
+             />
 
         <Button
             android:id="@+id/btnPinkNoise"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
             android:layout_weight="1"
-            android:onClick="playSound"
-            android:text="@string/pink_noise" />
+            android:text="@string/pink_noise"
+
+             />
 
         <Button
             android:id="@+id/btnBrownNoise"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="playSound"
-            android:text="@string/brown_noise" />
+            android:textColor="@color/black"
+            app:cornerRadius="20dp"
+            android:text="@string/brown_noise"
 
-    </LinearLayout>
+
+            />
+
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
 
     <Button
         android:id="@+id/btnHeartBeat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="2"
-        android:onClick="playSound"
         android:text="@string/heart_beat"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintStart_toStartOf="@+id/toggleButtonGroup"
+        app:layout_constraintTop_toBottomOf="@+id/toggleButtonGroup" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Text"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnHeartBeat" />
 
     <Button
         android:id="@+id/btnStop"
@@ -67,7 +88,6 @@
         android:id="@+id/btnSnackBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="loadSnack"
         android:singleLine="true"
         android:text="@string/snackbar_test"
 
@@ -76,13 +96,12 @@
         app:layout_constraintEnd_toStartOf="@+id/btnStop"
         app:layout_constraintHorizontal_bias="0.582"
         app:layout_constraintStart_toEndOf="@+id/btnToastTest"
-        tools:ignore="MissingConstraints"/>
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btnToastTest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="loadTest"
         android:singleLine="true"
         android:text="@string/toasttest"
 
