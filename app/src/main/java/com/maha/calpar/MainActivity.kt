@@ -10,7 +10,6 @@ import android.view.View
 import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -33,11 +32,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private var sound1 = 0
-    private var sound2 = 0
-    private var sound3 = 0
-    private var sound4 = 0
-    private var sound3StreamId = 0
+    private var soundWhite = 0
+    private var soundPink = 0
+    private var soundHearBeat = 0
+    private var soundBrown = 0
+    private var soundStream = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,10 +56,10 @@ class MainActivity : AppCompatActivity() {
 //        }
 
 
-        sound1 = soundPool.load(this, R.raw.snd_white_noise_01, 1)
-        sound2 = soundPool.load(this, R.raw.snd_pink_noise_01, 1)
-        sound3 = soundPool.load(this, R.raw.snd_heart_beat_01, 1)
-        sound4 = soundPool.load(this, R.raw.snd_brown_noise_01, 1)
+        soundWhite = soundPool.load(this, R.raw.snd_white_noise_01, 1)
+        soundPink = soundPool.load(this, R.raw.snd_pink_noise_01, 1)
+        soundHearBeat = soundPool.load(this, R.raw.snd_heart_beat_01, 1)
+        soundBrown = soundPool.load(this, R.raw.snd_brown_noise_01, 1)
 
         btnStop.setOnClickListener {
             stopSounds()
@@ -70,20 +69,20 @@ class MainActivity : AppCompatActivity() {
 
             stopSounds()
             if (isChecked) {
-                sound3StreamId = when (checkedId) {
+                soundStream = when (checkedId) {
                     R.id.btnWhiteNoise -> {
                         showToast("White toast")
-                        soundPool.play(sound2, 1f, 1f, 0, -1, 1f)
+                        soundPool.play(soundPink, 1f, 1f, 0, -1, 1f)
                     }
 
                     R.id.btnPinkNoise -> {
                         showToast("Pink toast.")
-                        soundPool.play(sound3, 1f, 1f, 0, -1, 1f)
+                        soundPool.play(soundHearBeat, 1f, 1f, 0, -1, 1f)
                     }
 
                     R.id.btnBrownNoise -> {
-                        loadSnack("2")
-                        soundPool.play(sound4, 1f, 1f, 0, -1, 1f)
+                        loadSnack("Brown noise")
+                        soundPool.play(soundBrown, 1f, 1f, 0, -1, 1f)
                     }
                     else -> {
                         error("Unknown noise")
@@ -99,7 +98,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun stopSounds() {
-        soundPool.stop(sound3StreamId)
+        soundPool.stop(soundStream)
     }
 
 
