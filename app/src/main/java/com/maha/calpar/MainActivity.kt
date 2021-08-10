@@ -44,17 +44,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-//        btnWhiteNoise.setOnClickListener {
-//            // if button is already in selected state and now it is pressed
-//            // again,then it will reach in not selected state and vice versa
-//            btnWhiteNoise.isSelected != btnWhiteNoise.isSelected
-//        }
-
-//        buttonSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
-//            // if the switch is checked,then enable the button,else not
-//            button.isEnabled = isChecked
-//        }
-
 
         soundWhite = soundPool.load(this, R.raw.snd_white_noise_01, 1)
         soundPink = soundPool.load(this, R.raw.snd_pink_noise_01, 1)
@@ -71,12 +60,12 @@ class MainActivity : AppCompatActivity() {
             if (isChecked) {
                 soundStream = when (checkedId) {
                     R.id.btnWhiteNoise -> {
-                        showToast("White toast")
+                        loadSnack("White noise")
                         soundPool.play(soundPink, 1f, 1f, 0, -1, 1f)
                     }
 
                     R.id.btnPinkNoise -> {
-                        showToast("Pink toast.")
+                        loadSnack("Pink noise")
                         soundPool.play(soundHearBeat, 1f, 1f, 0, -1, 1f)
                     }
 
@@ -90,7 +79,7 @@ class MainActivity : AppCompatActivity() {
                 }
             } else {
                 if (toggleButtonGroup.checkedButtonId == View.NO_ID) {
-                    showToast("Nothing Selected")
+                    loadSnack("Nothing Selected")
                 }
             }
         }
