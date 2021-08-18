@@ -57,10 +57,6 @@
 
             />
 
-
-
-
-
     </com.google.android.material.button.MaterialButtonToggleGroup>
 
     <androidx.gridlayout.widget.GridLayout
@@ -111,7 +107,6 @@
             app:layout_rowWeight="1" />
 
     </androidx.gridlayout.widget.GridLayout>
-
 
     <Button
         android:id="@+id/btnStop"
