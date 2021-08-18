@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/root"
@@ -16,7 +15,10 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:singleSelection="true">
+        app:singleSelection="true"
+
+
+        >
 
         <Button
             android:id="@+id/btnWhiteNoise"
@@ -36,19 +38,18 @@
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/button_background_color"
             android:layout_weight="1"
+            android:backgroundTint="@color/button_background_color"
             android:text="@string/pink_noise"
-            android:textColor="@color/black"
-            />
+            android:textColor="@color/black" />
 
         <Button
             android:id="@+id/btnBrownNoise"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/button_background_color"
             android:layout_weight="1"
+            android:backgroundTint="@color/button_background_color"
             android:text="@string/brown_noise"
             android:textColor="@color/black"
             app:cornerRadius="20dp"
@@ -57,27 +58,60 @@
             />
 
 
+
+
+
     </com.google.android.material.button.MaterialButtonToggleGroup>
 
-    <Button
-        android:id="@+id/btnHeartBeat"
-        android:layout_width="wrap_content"
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/idGrid"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="2"
-        android:text="@string/heart_beat"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/toggleButtonGroup"
-        app:layout_constraintTop_toBottomOf="@+id/toggleButtonGroup" />
+        android:fillViewport="true"
+        app:columnCount="2"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintVertical_weight="2"
+        app:layout_constraintTop_toBottomOf="@id/toggleButtonGroup"
+        app:rowCount="2">
 
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Your Text"
+        <Button
+            android:id="@+id/btnHeartBeat"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/heart_beat"
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnHeartBeat" />
+            app:layout_column="0"
+            app:layout_columnWeight="1"
+
+            app:layout_row="1"
+            app:layout_rowWeight="1"
+
+            />
+
+        <Button
+            android:id="@+id/btnWhiteNoise2"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+
+            android:backgroundTint="@color/button_background_color"
+            android:text="@string/white_noise"
+
+            android:textColor="@color/black"
+            app:cornerRadius="20dp"
+
+            app:layout_column="1"
+            app:layout_columnWeight="1"
+
+            app:layout_gravity="center"
+            app:layout_row="0"
+
+            app:layout_rowWeight="1" />
+
+    </androidx.gridlayout.widget.GridLayout>
+
 
     <Button
         android:id="@+id/btnStop"
@@ -100,7 +134,9 @@
         app:layout_constraintEnd_toStartOf="@+id/btnStop"
         app:layout_constraintHorizontal_bias="0.582"
         app:layout_constraintStart_toEndOf="@+id/btnToastTest"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        app:shapeAppearance="@style/Cut"
+        />
 
     <Button
         android:id="@+id/btnToastTest"
@@ -108,6 +144,7 @@
         android:layout_height="wrap_content"
         android:singleLine="true"
         android:text="@string/toasttest"
+        app:shapeAppearance="@drawable/corner_radius"
 
         app:layout_constraintBottom_toBottomOf="parent"
 
