@@ -7,13 +7,16 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <com.google.android.material.button.MaterialButtonToggleGroup
         android:id="@+id/toggleButtonGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="10dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
+
         app:layout_constraintTop_toTopOf="parent"
         app:singleSelection="true"
 
@@ -23,31 +26,34 @@
         <Button
             android:id="@+id/btnWhiteNoise"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-
             android:backgroundTint="@color/button_background_color"
-            android:text="@string/white_noise"
 
+
+            android:insetRight="5dp"
+            android:text="@string/white_noise"
             android:textColor="@color/black"
             app:cornerRadius="20dp" />
 
         <Button
             android:id="@+id/btnPinkNoise"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
             android:layout_weight="1"
             android:backgroundTint="@color/button_background_color"
+            android:insetRight="5dp"
             android:text="@string/pink_noise"
             android:textColor="@color/black" />
 
         <Button
             android:id="@+id/btnBrownNoise"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
             android:layout_weight="1"
             android:backgroundTint="@color/button_background_color"
             android:text="@string/brown_noise"
@@ -59,54 +65,101 @@
 
     </com.google.android.material.button.MaterialButtonToggleGroup>
 
-    <androidx.gridlayout.widget.GridLayout
-        android:id="@+id/idGrid"
+    <ScrollView
+        android:id="@+id/idScrollView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fillViewport="true"
-        app:columnCount="2"
-        app:layout_constraintHorizontal_weight="2"
-        app:layout_constraintVertical_weight="2"
+        android:layout_height="100dp"
+
         app:layout_constraintTop_toBottomOf="@id/toggleButtonGroup"
-        app:rowCount="2">
 
+        >
 
-        <Button
-            android:id="@+id/btnHeartBeat"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="@string/heart_beat"
-
-            app:layout_column="0"
-            app:layout_columnWeight="1"
-
-            app:layout_row="1"
-            app:layout_rowWeight="1"
-
-            />
-
-        <Button
-            android:id="@+id/btnWhiteNoise2"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="wrap_content"
+        <androidx.gridlayout.widget.GridLayout
+            android:id="@+id/idGrid"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
+            android:fillViewport="true"
+            app:columnCount="2"
 
-            android:backgroundTint="@color/button_background_color"
-            android:text="@string/white_noise"
+            >
 
-            android:textColor="@color/black"
-            app:cornerRadius="20dp"
 
-            app:layout_column="1"
-            app:layout_columnWeight="1"
+            <Button
+                android:id="@+id/btn1"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:text="btn1"
+                app:layout_columnSpan="2"
+                app:layout_columnWeight="1" />
 
-            app:layout_gravity="center"
-            app:layout_row="0"
+            <Button
+                android:id="@+id/btnWhiteNoise2"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
 
-            app:layout_rowWeight="1" />
+                android:backgroundTint="@color/button_background_color"
+                android:text="btn2"
 
-    </androidx.gridlayout.widget.GridLayout>
+                android:textColor="@color/black"
+                app:cornerRadius="20dp"
+
+
+                app:layout_columnWeight="1"
+
+                app:layout_gravity="center"
+
+
+                app:layout_rowWeight="1" />
+
+            <Button
+                android:id="@+id/btn3"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:text="btn3"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1" />
+
+            <Button
+                android:id="@+id/btn4"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:text="btn4"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1" />
+
+            <Button
+                android:id="@+id/btn5"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:text="btn5"
+                app:layout_columnWeight="1"
+                app:layout_rowSpan="2"
+                app:layout_rowWeight="1" />
+
+            <Button
+                android:id="@+id/btn6"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:text="btn6"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1" />
+
+
+        </androidx.gridlayout.widget.GridLayout>
+    </ScrollView>
+
 
     <Button
         android:id="@+id/btnStop"
@@ -129,9 +182,8 @@
         app:layout_constraintEnd_toStartOf="@+id/btnStop"
         app:layout_constraintHorizontal_bias="0.582"
         app:layout_constraintStart_toEndOf="@+id/btnToastTest"
-        tools:ignore="MissingConstraints"
         app:shapeAppearance="@style/Cut"
-        />
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btnToastTest"
@@ -139,10 +191,10 @@
         android:layout_height="wrap_content"
         android:singleLine="true"
         android:text="@string/toasttest"
-        app:shapeAppearance="@drawable/corner_radius"
-
         app:layout_constraintBottom_toBottomOf="parent"
 
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:shapeAppearance="@drawable/corner_radius" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

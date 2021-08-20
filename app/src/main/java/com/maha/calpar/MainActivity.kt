@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -57,11 +58,18 @@ class MainActivity : AppCompatActivity() {
         toggleButtonGroup.addOnButtonCheckedListener { toggleButtonGroup, checkedId, isChecked ->
 
             stopSounds()
+
+
+
             if (isChecked) {
+
+
+
                 soundStream = when (checkedId) {
                     R.id.btnWhiteNoise -> {
                         loadSnack("White noise")
                         soundPool.play(soundPink, 1f, 1f, 0, -1, 1f)
+
                     }
 
                     R.id.btnPinkNoise -> {
@@ -86,25 +94,58 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun stopSounds() {
-        soundPool.stop(soundStream)
+
+
+
+    private fun clearAllID1() {
+        if (toggleButtonGroup != null) {
+            toggleButtonGroup.clearOnButtonCheckedListeners()
+        }
     }
-
-
-    fun showToast(str: String) {
-        Toast.makeText(this, str, Toast.LENGTH_SHORT).show()
+    private fun clearAllID2() {
+        if (toggleButtonGroup != null) {
+            toggleButtonGroup.clearChecked()
+        }
     }
+    private fun clearAllID3() {
+        if (toggleButtonGroup != null) {
+            toggleButtonGroup.clearFindViewByIdCache()
+        }
+    }
+    private fun clearAllID4() {
 
+    }
+    private fun clearAllID5() {
 
-    private fun loadSnack(str: String) {
-
-
-        Snackbar.make(root, str, 1500)
-            .apply {
-                (view.layoutParams as FrameLayout.LayoutParams).gravity = Gravity.TOP
+            if (toggleButtonGroup != null) {
+                toggleButtonGroup.uncheck(R.id.toggleButtonGroup)
             }
-            .show()
-    }
+        }
+
+
+        fun stopSounds() {
+            soundPool.stop(soundStream)
+
+
+
+
+        }
+
+
+        fun showToast(str: String) {
+            Toast.makeText(this, str, Toast.LENGTH_SHORT).show()
+        }
+
+
+        private fun loadSnack(str: String) {
+
+
+            Snackbar.make(root, str, 1500)
+                .apply {
+                    (view.layoutParams as FrameLayout.LayoutParams).gravity = Gravity.TOP
+                }
+                .show()
+        }
 
 
 //    private fun btnDefaultDesign(v: View) {
@@ -117,7 +158,7 @@ class MainActivity : AppCompatActivity() {
 //        btnWhiteNoise.setBackgroundResource(R.drawable.bg_button_2)
 //
 //
-//    }
+
 
 
 }
