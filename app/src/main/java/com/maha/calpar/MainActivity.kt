@@ -54,9 +54,11 @@ class MainActivity : AppCompatActivity() {
         btnStop.setOnClickListener {
             stopSounds()
         }
+        BtnClearchecked.setOnClickListener {
+            toggleButtonGroup.uncheck()
+        }
 
         toggleButtonGroup.addOnButtonCheckedListener { toggleButtonGroup, checkedId, isChecked ->
-
             stopSounds()
 
 
@@ -78,6 +80,7 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     R.id.btnBrownNoise -> {
+
                         loadSnack("Brown noise")
                         soundPool.play(soundBrown, 1f, 1f, 0, -1, 1f)
                     }
@@ -124,7 +127,9 @@ class MainActivity : AppCompatActivity() {
 
 
         fun stopSounds() {
+
             soundPool.stop(soundStream)
+
 
 
 
@@ -145,6 +150,12 @@ class MainActivity : AppCompatActivity() {
                     (view.layoutParams as FrameLayout.LayoutParams).gravity = Gravity.TOP
                 }
                 .show()
+        }
+
+        private fun clrCheckedButtons() {
+
+                toggleButtonGroup.clearChecked()
+
         }
 
 
